@@ -1,16 +1,41 @@
+
+@import url(./font.css);
+
+
 * {
   text-decoration: none!important;
   list-style: none;
   box-sizing: border-box;
 }
 
+
+:root {
+
+
+  /* variables for Font families */
+--Abel: "Abel", cursive;
+--Anton: "Anton", cursive;
+--Josefin: "Josefin", cursive;
+--Lexend: "Lexend", cursive;
+--Livvic: "Livvic", cursive;
+--ComicNeue: "ComicNeue", cursive;
+--jokerman: "jokerman", cursive;
+
+}
+
+
+
+
+
+
+
+
 body {
-  font-family: 'Patrick Hand',
-  cursive;
+  font-family: var(--ComicNeue);
 } 
 
 html {
-  font-size: 85%;
+  font-size: 110%;
 }
 
 
@@ -174,6 +199,7 @@ html {
 }
 
 .display .container-fluid {
+  padding:1rem 1rem;
   display: block;
 }
 
@@ -266,7 +292,7 @@ html {
   width:100%;
   height: 100vh;
   position: relative;
-  /* perspective: 20rem; */
+  perspective: 20rem;
   overflow: hidden;
 }
 
@@ -400,7 +426,7 @@ html {
 #about-us {
   width:100%;
   background-color: #f5f5f5;
-  padding-bottom: 10rem;
+  padding: 5rem 1rem;
   font-size:.8rem;
 }
 
@@ -422,6 +448,7 @@ html {
 }
 
 .services {
+  margin-top:1rem;
   width: 100%;
   height: 100%;
   display:grid;
@@ -468,7 +495,11 @@ html {
 .service-header {
   display: flex;
   align-items: center;
-  margin-bottom:3rem;
+  margin-bottom:1rem;
+}
+
+.services p {
+  font-size:1.1rem;
 }
 
 
@@ -493,7 +524,7 @@ html {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding:0 5rem 10rem 5rem;
+  padding:3rem 1rem;
 }
 
 .cards-wrapper {
@@ -505,8 +536,9 @@ html {
 }
 
 .card-default {
-  width:19rem;
-  height:27rem;
+  width:30%;
+  height:auto;
+  margin:.2rem;
   box-shadow: 0rem 1rem 3rem rgba(0, 0, 0, 0.3);
   border-radius: .5rem;
   position: relative;
@@ -522,11 +554,12 @@ html {
 
 .card-img-wrapper img {
   width:100%;
-  height:100%;
+  height:auto;
   object-fit: cover;
   opacity:.8rem;
   border-radius: .5rem;
   transition: opacity .3s;
+  display: block;
 }
 
 .card-default:hover .card-img-wrapper img {
@@ -569,8 +602,9 @@ html {
 /* contact section Css */
 
 #contact {
+  padding:3rem 1rem;
   width:100%;
-  height: 100vh;
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -579,18 +613,18 @@ html {
 
 .contact-wrapper {
   width:80%;
-  height: 48rem;
+  height: auto;
   display: flex;
   box-shadow: 0 3rem 7rem rgba(0, 0, 0, 0.5);
 }
 
 .contact-left {
-  width:35%;
+  width:45%;
   background:linear-gradient(to bottom,rgba(15, 15, 15, 0.1), rgba(22, 22, 22, 0.8)), url(../images/room11.jpg) center/ cover no-repeat;
 }
 
 .contact-right {
-  width:65%;
+  width:55%;
   background-color: #eee;
   padding:3rem 6rem;
 }
@@ -611,22 +645,24 @@ html {
 }
 
 .field {
-  width:25rem;
+  width:100%;
   background-color: transparent;
   border:none;
   border-bottom:.1rem dashed #636363;
   margin:1.5rem 0;
-  padding:.8rem .8rem .8rem 0.1rem;
+  padding:.8rem .8rem 0 0.1rem;
   font-size:1rem;
   color:#4b4b4b;
 }
 
 .default-input-group {
   position: relative;
+  width:100%;
 }
 
 .default-input-group input {
   height:3rem;
+  
 }
 
 .default-input-group textarea {
@@ -657,7 +693,7 @@ html {
 }
 
 .field:focus ~ label {
-  transform:translateY(-3rem);
+  transform:translateY(-1rem);
   font-size:.8rem;
 }
 
@@ -697,6 +733,9 @@ html {
   right:4rem;
 }
 
+
+
+
 /* making the website responsive */
 @media (max-width:1500px) {
   .about-us-img-wrapper {
@@ -708,8 +747,8 @@ html {
   }
 
   .contact-wrapper {
-    width:75% ;
-    height:45rem ;
+    width:80% ;
+    height:auto;
   }
 
   .footer-content {
@@ -762,14 +801,15 @@ html {
 }
 
 @media (max-width:1300px) {
-  #team {
-    padding-bottom: 5rem;
+
+  .contact-left {
+    width:35%;
   }
 
-  .contact-wrapper {
-    width:70%;
-    height: 35rem;
+  .contact-right {
+    width: 65%;
   }
+
 
   .contact-heading {
     margin-bottom: 2rem;
@@ -796,7 +836,7 @@ html {
   }
 
   .service {
-    width:70%;
+    width:100%;
     margin-bottom: 1.5rem;
   }
 
@@ -808,8 +848,12 @@ html {
     width:100%;
   }
 
+  .contact-wrapper {
+    width:100%;
+  }
+
   .contact-left {
-    width:0;
+    display: none;
   }
 
   .contact-right {
@@ -836,6 +880,9 @@ html {
   }
 }
 
+
+
+
 @media (max-width:700px) {
   .banner h1 {
     font-size: 1.8rem;
@@ -852,7 +899,8 @@ html {
   }
 
   .card-default {
-    margin-bottom: 5rem;
+    margin-bottom: 3rem;
+    width:100%;
   }
 
   .field {
@@ -862,11 +910,17 @@ html {
   .default-input-group textarea {
     max-width: 25rem;
   }
+
+
+  .contact-right {
+    padding:1rem;
+
+  }
 }
 
 @media (max-width:500px) {
   html {
-    font-size: 75%;
+    font-size: 100%;
   }
 
   #sidebar {
@@ -894,13 +948,38 @@ html {
 
 
   .service {
-    width:60%;
+    width:100%;
   }
 
   #footer {
     height:20rem;
   }
 }
+
+
+@media screen and (max-width:400px) {
+  html {
+    font-size: 80%;
+  }
+
+  .field:focus ~ label {
+    transform:translateY(-2rem);
+    font-size:.7rem;
+  }
+
+@media screen and (max-width:250px) {
+  html {
+    font-size: 65%;
+  }
+
+  .field {
+    border:none;
+
+}
+
+}
+
+
 
 
 
